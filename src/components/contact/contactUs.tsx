@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import './styles.css';
+
+
 
 interface FormData {
   name: string;
@@ -17,6 +20,7 @@ const ContactUs: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState('');
+  const [showFeedback, setShowFeedback] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -28,7 +32,7 @@ const ContactUs: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Ganti 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', dan 'YOUR_USER_ID' dengan nilai yang benar
+      // Ganti 'service_24hmi89', 'template_8158p55', dan 'pZjx_Azgo5U0tNZBI' dengan nilai yang benar
       await emailjs.send('service_24hmi89', 'template_8158p55', formData, 'pZjx_Azgo5U0tNZBI');
       setFeedback('Thank you for reaching out! We will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
@@ -37,6 +41,8 @@ const ContactUs: React.FC = () => {
       setFeedback('There was an error submitting your form. Please try again.');
     } finally {
       setIsSubmitting(false);
+      setShowFeedback(true);
+      setTimeout(() => setShowFeedback(false), 3000); // Menghilangkan pesan setelah 3 detik
     }
   };
 
@@ -94,7 +100,11 @@ const ContactUs: React.FC = () => {
             </button>
           </div>
         </form>
-        {feedback && <p className="text-center mt-4">{feedback}</p>}
+        {showFeedback && (
+          <p className={`text-center mt-4 fade-in-out`}>
+            {feedback}
+          </p>
+        )}
       </div>
     </section>
   );

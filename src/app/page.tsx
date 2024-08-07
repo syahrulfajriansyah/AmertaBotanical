@@ -3,7 +3,7 @@ import CompanyOverview from '../components/CompanyOverview/CompanyOverview';
 import ProductsServices from '../components/ProductsServices/ProductsServices';
 import Testimonials from '../components/Testimonials/Testimonial'; // Pastikan nama komponen benar
 import VideoSection from '../components/VideoSection/VideoSection'; // Import the VideoSection component
-
+import ContactUs from '../components/contact/contactUs';
 
 const HomePage = () => {
   return (
@@ -13,6 +13,7 @@ const HomePage = () => {
       <ProductsServices />
       <Testimonials />
       <VideoSection />
+      <ContactUs/>
     </>
   );
 };
