@@ -1,4 +1,4 @@
-'use client'; // Menandai ini sebagai Client Component
+'use client';
 
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
@@ -28,14 +28,12 @@ const ContactUs: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Konversi formData ke Record<string, unknown>
       const formDataToSend: Record<string, unknown> = {
         name: formData.name,
         email: formData.email,
         message: formData.message,
       };
 
-      // Ganti 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', dan 'YOUR_USER_ID' dengan nilai yang benar
       await emailjs.send('service_24hmi89', 'template_8158p55', formDataToSend, 'pZjx_Azgo5U0tNZBI');
       setFeedback('Thank you for reaching out! We will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
@@ -62,7 +60,7 @@ const ContactUs: React.FC = () => {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300"
               placeholder="Your name"
               required
             />
@@ -74,7 +72,7 @@ const ContactUs: React.FC = () => {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300"
               placeholder="Your email"
               required
             />
@@ -86,7 +84,7 @@ const ContactUs: React.FC = () => {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="relative w-full p-3 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300"
               placeholder="Your message"
               required
             ></textarea>

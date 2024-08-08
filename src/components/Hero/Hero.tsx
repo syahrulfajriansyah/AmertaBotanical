@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,13 +9,13 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative w-full h-screen bg-gradient-to-r from-green-900 via-green-800 to-black overflow-hidden">
       {/* Logo */}
       <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-30">
-        <Link href="/">
+        <Link href="/" passHref>
           <Image
             src="/AMERTA-BOTANICAL-2-W-T.PNG"
             alt="AMERTA Botanical"
             width={350}
             height={90}
-            className="relative w-auto transition-transform duration-300 ease-in-out transform hover:scale-125"
+            className="relative w-auto transition-transform duration-300 ease-in-out transform hover:scale-110"
             priority
           />
         </Link>
@@ -30,10 +32,13 @@ const Hero: React.FC = () => {
           <p className="relative text-lg md:text-2xl mb-8 text-green-300 drop-shadow-md animate-fadeIn animate-delay-200">
             From West Borneo to You: Reliable Kratom Quality with Amerta Botanical.
           </p>
-          <Link href="/contact">
-            <div className="relative inline-block px-10 py-4 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:from-green-500 hover:to-green-400 text-white font-semibold rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110 hover:shadow-2xl animate-fadeIn animate-delay-400">
+          <Link href="/contact" passHref>
+            <button 
+              type="button"
+              className="relative inline-block px-10 py-4 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:from-green-500 hover:to-green-400 text-white font-semibold rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+            >
               Get Kratom
-            </div>
+            </button>
           </Link>
         </div>
       </div>
