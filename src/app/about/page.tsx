@@ -1,4 +1,4 @@
-'use client'; // Add this line to mark this as a Client Component
+'use client'; // Mark this as a Client Component
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -35,7 +35,7 @@ const AboutPage = () => {
     getUser();
   }, []);
 
-  if (!founder) return <p>Loading...</p>;
+  if (!founder) return <p className="text-center py-12">Loading...</p>;
 
   return (
     <div className="min-h-screen bg-green-900 text-gray-100">
@@ -90,7 +90,14 @@ const AboutPage = () => {
             <div className="team-member bg-gray-800 shadow-lg rounded-lg p-6 hover:bg-gray-700 transition-colors duration-300 border border-green-600">
               <div className="flex items-start mb-4">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-green-600">
-                  <Image src={founder.picture.large} alt={`${founder.name.first} ${founder.name.last}`} width={128} height={128} style={{ objectFit: 'cover' }} />
+                  <Image 
+                    src={founder.picture.large} 
+                    alt={`${founder.name.first} ${founder.name.last}`} 
+                    width={128} 
+                    height={128} 
+                    style={{ objectFit: 'cover' }} 
+                    priority // Preload image for better performance
+                  />
                 </div>
                 <div className="ml-6 flex-1">
                   <h3 className="text-xl font-semibold mb-2 text-green-300">{`${founder.name.first} ${founder.name.last}`} &ndash; Founder &amp; CEO</h3>
