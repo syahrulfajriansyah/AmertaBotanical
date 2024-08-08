@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative w-full h-screen bg-gradient-to-r from-green-900 via-green-800 to-black overflow-hidden">
       {/* Logo */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-30 group">
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-30">
         <Link href="/">
           <Image
             src="/AMERTA-BOTANICAL-2-W-T.PNG"
@@ -14,6 +14,7 @@ const Hero: React.FC = () => {
             width={350}
             height={90}
             className="relative w-auto transition-transform duration-300 ease-in-out transform hover:scale-125"
+            priority
           />
         </Link>
       </div>
@@ -35,26 +36,6 @@ const Hero: React.FC = () => {
             </div>
           </Link>
         </div>
-      </div>
-
-      {/* Animated Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-green-100 animate-bounce z-20">
-        <a href="#about" className="relative block">
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </a>
       </div>
     </section>
   );
