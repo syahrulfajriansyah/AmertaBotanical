@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           <p className="relative text-lg md:text-2xl mb-8 text-green-300 drop-shadow-md animate-fadeIn animate-delay-200">
             From West Borneo to You: Reliable Kratom Quality with Amerta Botanical.
           </p>
-          <Link href="#about">
+          <Link href="/contact">
             <div className="relative inline-block px-10 py-4 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:from-green-500 hover:to-green-400 text-white font-semibold rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110 hover:shadow-2xl animate-fadeIn animate-delay-400">
               Get Kratom
             </div>
