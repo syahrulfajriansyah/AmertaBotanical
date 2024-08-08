@@ -16,7 +16,7 @@ const CompanyOverview: React.FC = () => {
         <div className="relative mb-12 bg-white rounded-lg shadow-xl p-8 border border-gray-200">
           <h3 className="relative text-4xl font-semibold mb-6 text-green-800">Our History</h3>
           <p className="relative text-gray-800 leading-relaxed">
-            Established in 2000, our company began with a vision to innovate and excel. Over the years, we’ve expanded our horizons, transforming challenges into opportunities and setting new industry standards. Our journey is a testament to our relentless pursuit of excellence.
+            Established in 2017, we are a producer of kratom powder with GMP-standard production facilities. Over the years, we’ve expanded our horizons, transforming challenges into opportunities and setting new industry standards. Our journey is a testament to our relentless pursuit of excellence.
           </p>
         </div>
 
