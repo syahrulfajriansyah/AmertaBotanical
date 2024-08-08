@@ -20,7 +20,7 @@ const ServicesPage = () => {
             </div>
             {/* Repeat for other services */}
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-green-600 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-xl font-semibold mb-2 text-green-300">Wholesale & Retail Solutions</h2>
+              <h2 className="text-xl font-semibold mb-2 text-green-300">Wholesale &amp; Retail Solutions</h2>
               <p className="text-lg mb-4">
                 We provide flexible wholesale and retail solutions to accommodate businesses of all sizes. Our goal is to support our partners with high-quality products and reliable service.
               </p>
@@ -42,7 +42,7 @@ const ServicesPage = () => {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-green-600 hover:shadow-xl transition-shadow duration-300">
               <blockquote className="text-lg mb-4">
                 <p className="italic">
-                  "AMERTA BOTANICAL's kratom powder has transformed our product line. The quality is unmatched and their service is exceptional."
+                  &quot;AMERTA BOTANICAL&apos;s kratom powder has transformed our product line. The quality is unmatched and their service is exceptional.&quot;
                 </p>
               </blockquote>
               <cite className="text-green-300">— Alex R., Product Manager</cite>
@@ -51,7 +51,7 @@ const ServicesPage = () => {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-green-600 hover:shadow-xl transition-shadow duration-300">
               <blockquote className="text-lg mb-4">
                 <p className="italic">
-                  "The wholesale solutions provided by AMERTA BOTANICAL have been a game-changer for our business. Highly recommend!"
+                  &quot;The wholesale solutions provided by AMERTA BOTANICAL have been a game-changer for our business. Highly recommend!&quot;
                 </p>
               </blockquote>
               <cite className="text-green-300">— Jamie L., Retail Owner</cite>
@@ -59,7 +59,7 @@ const ServicesPage = () => {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg border border-green-600 hover:shadow-xl transition-shadow duration-300">
               <blockquote className="text-lg mb-4">
                 <p className="italic">
-                  "Their commitment to sustainability is impressive. It's great to work with a company that values both quality and the environment."
+                  &quot;Their commitment to sustainability is impressive. It&apos;s great to work with a company that values both quality and the environment.&quot;
                 </p>
               </blockquote>
               <cite className="text-green-300">— Taylor M., Environmental Consultant</cite>

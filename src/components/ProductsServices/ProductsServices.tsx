@@ -50,9 +50,9 @@ const ProductsServices: React.FC = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300 transform group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-300 transform group-hover:scale-110"
+                  style={{ objectFit: 'cover' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-green-800 via-transparent to-transparent opacity-40 pointer-events-none"></div>
               </div>

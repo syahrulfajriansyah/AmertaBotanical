@@ -1,25 +1,28 @@
-// src/components/TeamMemberCard/TeamMemberCard.tsx
-import React from 'react';
+import Image from 'next/image';
 
-interface TeamMember {
-  name: string;
-  title: string;
-  image: string;
-  bio: string;
+interface TeamMemberCardProps {
+  member: {
+    image: string;
+    name: string;
+    role: string;
+  };
 }
 
-const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
+const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-        <p className="text-gray-500 mb-4">{member.title}</p>
-        <p className="text-gray-700">{member.bio}</p>
+    <div className="team-member bg-gray-800 shadow-lg rounded-lg p-6 hover:bg-gray-700 transition-colors duration-300 border border-green-600">
+      <div className="flex items-start mb-4">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-green-600">
+          <Image src={member.image} alt={member.name} width={128} height={128} style={{ objectFit: 'cover' }} />
+        </div>
+        <div className="ml-6 flex-1">
+          <h3 className="text-xl font-semibold mb-2 text-green-300">{member.name} &ndash; {member.role}</h3>
+          <p className="text-lg mb-4">
+            <span className="font-semibold text-green-300">Role:</span> {member.role}
+            <br />
+            <span className="font-semibold text-green-300">Experience:</span> [Describe experience and achievements]
+          </p>
+        </div>
       </div>
     </div>
   );

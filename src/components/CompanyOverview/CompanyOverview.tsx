@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const CompanyOverview: React.FC = () => {
   return (
@@ -27,34 +28,28 @@ const CompanyOverview: React.FC = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-10">
             {/* Example Team Members */}
-            <div className="w-full md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105">
-              <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Doe" className="w-full h-48 object-cover rounded-t-lg mb-4 border border-gray-200" />
-              <div className="text-center">
-                <h4 className="text-xl font-semibold text-gray-900">John Doe</h4>
-                <p className="text-gray-700">CEO</p>
+            {[
+              { id: 1, name: 'John Doe', role: 'CEO', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
+              { id: 2, name: 'Jane Smith', role: 'CTO', image: 'https://randomuser.me/api/portraits/women/2.jpg' },
+              { id: 3, name: 'Alice Johnson', role: 'CFO', image: 'https://randomuser.me/api/portraits/women/3.jpg' },
+              { id: 4, name: 'Bob Brown', role: 'CMO', image: 'https://randomuser.me/api/portraits/men/4.jpg' },
+            ].map((member) => (
+              <div key={member.id} className="w-full md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105">
+                <div className="w-full h-48 relative mb-4 border border-gray-200 rounded-t-lg">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    layout="fill"
+                    className="object-cover rounded-t-lg"
+                    priority
+                  />
+                </div>
+                <div className="text-center">
+                  <h4 className="text-xl font-semibold text-gray-900">{member.name}</h4>
+                  <p className="text-gray-700">{member.role}</p>
+                </div>
               </div>
-            </div>
-            <div className="w-full md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105">
-              <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Jane Smith" className="w-full h-48 object-cover rounded-t-lg mb-4 border border-gray-200" />
-              <div className="text-center">
-                <h4 className="text-xl font-semibold text-gray-900">Jane Smith</h4>
-                <p className="text-gray-700">CTO</p>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105">
-              <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Alice Johnson" className="w-full h-48 object-cover rounded-t-lg mb-4 border border-gray-200" />
-              <div className="text-center">
-                <h4 className="text-xl font-semibold text-gray-900">Alice Johnson</h4>
-                <p className="text-gray-700">CFO</p>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105">
-              <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Bob Brown" className="w-full h-48 object-cover rounded-t-lg mb-4 border border-gray-200" />
-              <div className="text-center">
-                <h4 className="text-xl font-semibold text-gray-900">Bob Brown</h4>
-                <p className="text-gray-700">CMO</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
