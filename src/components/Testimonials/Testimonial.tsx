@@ -32,7 +32,7 @@ const testimonials: Testimonial[] = [
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 flex items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+    <div className="relative bg-white shadow-lg rounded-lg p-6 flex items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
       <Image
         src={testimonial.image}
         alt={testimonial.name}
@@ -40,10 +40,10 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
         height={64}
         className="rounded-full object-cover mr-4"
       />
-      <div>
-        <p className="text-lg font-semibold text-gray-900">{testimonial.name}</p>
-        <p className="text-gray-600 mb-2">{testimonial.position}</p>
-        <p className="text-gray-700">{testimonial.text}</p>
+      <div className="relative">
+        <p className="relative text-lg font-semibold text-gray-900">{testimonial.name}</p>
+        <p className="relative text-gray-600 mb-2">{testimonial.position}</p>
+        <p className="relative text-gray-700">{testimonial.text}</p>
       </div>
     </div>
   );
@@ -51,9 +51,9 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">What Our Clients Say</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="relative container mx-auto px-4 py-12">
+      <h2 className="relative text-3xl font-bold text-center mb-8 text-gray-900">What Our Clients Say</h2>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard key={index} testimonial={testimonial} />
         ))}

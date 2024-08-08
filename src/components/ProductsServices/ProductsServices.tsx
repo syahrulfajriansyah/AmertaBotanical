@@ -38,9 +38,9 @@ const productsServices: ProductService[] = [
 const ProductsServices: React.FC = () => {
   return (
     <section className="relative w-full bg-gradient-to-r from-green-900 via-green-800 to-black overflow-hidden py-12">
-      <div className="container mx-auto px-4">
+      <div className="relative container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-green-200">Our Products and Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {productsServices.map((item, index) => (
             <div
               key={index}
@@ -56,7 +56,7 @@ const ProductsServices: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-green-800 via-transparent to-transparent opacity-40 pointer-events-none"></div>
               </div>
-              <div className="p-4 sm:p-6">
+              <div className="relative p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 text-green-300">{item.title}</h3>
                 <p className="text-gray-300 text-sm sm:text-base">{item.description}</p>
               </div>
